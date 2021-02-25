@@ -19,16 +19,6 @@
 </template>
 
 <style lang="scss">
-// 自定义的reset
-@import './styles/reset.css';
-// 排版样式
-// @import './styles/typo.css';
-// 适应不同浏览器
-// @import './styles/normalize.css';
-
-// 公共的css
-@import './styles/common.scss';
-
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -83,7 +73,7 @@
 //大屏幕pc端
 @media screen and (min-width: 1200px) {
   #app {
-    border: solid black 1px;
+    border: solid $border-color-1 1px;
   }
 }
 </style>
