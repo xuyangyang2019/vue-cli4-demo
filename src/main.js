@@ -5,6 +5,9 @@ import store from './store'
 
 // 引入font-awesome
 import 'font-awesome/css/font-awesome.css'
+// 引入iconfont
+import './assets/iconfont/iconfont.js'
+import './assets/iconfont/iconfont.css'
 
 Vue.config.productionTip = false
 
