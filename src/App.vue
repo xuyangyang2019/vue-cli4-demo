@@ -5,6 +5,7 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
+    <i class="fa fa-address-book-o" aria-hidden="true"></i>
   </div>
 </template>
 
