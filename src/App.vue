@@ -13,6 +13,8 @@
     <svg class="icon" aria-hidden="true">
       <use xlink:href="#icon-success"></use>
     </svg>
+    <!-- element-ui -->
+    <el-button type="primary" size="small">button</el-button>
   </div>
 </template>
 
