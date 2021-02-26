@@ -98,7 +98,8 @@
 
 <script>
 import { mapState } from 'vuex'
-import { getCommonTerms } from '../api/index'
+import { getCommonTerms } from '../api/httpApi'
+import { createWebSocket } from '../websocket/websocket'
 
 export default {
   name: 'HelloWorld',
@@ -114,6 +115,19 @@ export default {
     ...mapState('admin', {
       adminDemo: 'adminDemo'
     })
+  },
+  mounted() {
+    // 浏览器支持websocket
+    if ('WebSocket' in window) {
+      // 创建websocket
+      createWebSocket(this.webSocketUrl)
+    } else {
+      //  如果浏览器不支持WebSocket
+      this.$message({
+        message: '您的浏览器不支持 WebSocket!，请更换浏览器！',
+        type: 'error'
+      })
+    }
   },
   methods: {
     showCommonTerms() {
