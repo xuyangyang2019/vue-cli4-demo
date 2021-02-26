@@ -83,20 +83,54 @@
         <a href="https://github.com/vuejs/awesome-vue" target="_blank" rel="noopener">awesome-vue</a>
       </li>
     </ul>
+    <!-- fontawesome图标 -->
+    <i class="fa fa-address-book-o" aria-hidden="true"></i>
+    <!-- iconfont图标 -->
+    <span class="iconfont icon-info"></span>
+    <svg class="icon" aria-hidden="true">
+      <use xlink:href="#icon-success"></use>
+    </svg>
+    <!-- element-ui -->
+    <el-button type="primary" size="small" @click="showCommonTerms()">获取公共话术</el-button>
+    {{ commonData }}
   </div>
 </template>
 
 <script>
 import { mapState } from 'vuex'
+import { getCommonTerms } from '../api/index'
+
 export default {
   name: 'HelloWorld',
   props: {
     msg: String
   },
+  data() {
+    return {
+      commonData: ''
+    }
+  },
   computed: {
     ...mapState('admin', {
       adminDemo: 'adminDemo'
     })
+  },
+  methods: {
+    showCommonTerms() {
+      getCommonTerms(20)
+        .then((res) => {
+          if (res.data) {
+            console.log(res.data)
+            this.commonData = res.data
+            // this.$message.info(res.data)
+          } else {
+            this.$message.warning('没有信息')
+          }
+        })
+        .catch((err) => {
+          console.log(err)
+        })
+    }
   }
 }
 </script>

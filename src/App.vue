@@ -6,15 +6,6 @@
       <router-link to="/about">About</router-link>
     </div>
     <router-view />
-    <!-- fontawesome图标 -->
-    <i class="fa fa-address-book-o" aria-hidden="true"></i>
-    <!-- iconfont图标 -->
-    <span class="iconfont icon-info"></span>
-    <svg class="icon" aria-hidden="true">
-      <use xlink:href="#icon-success"></use>
-    </svg>
-    <!-- element-ui -->
-    <el-button type="primary" size="small">button</el-button>
   </div>
 </template>
 

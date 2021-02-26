@@ -182,7 +182,7 @@ function apiAxios(method, url, params) {
     httpInstance({
       url: url,
       method: method,
-      // baseURL: 'http://192.168.0.111:3000', // 开发模式下vue-cli已经配置了请求转发，所以不用基础路径即可
+      baseURL: 'http://www.jjldkj.com:13086', // 开发模式下vue-cli已经配置了请求转发，所以不用基础路径即可
       params: method === 'GET' || method === 'DELETE' ? params : null,
       paramsSerializer: (params) => {
         return qs.stringify(params, { indices: false })
